@@ -13,9 +13,10 @@ namespace WebPageAge.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(WebpageInfo model)
         {
-            return View();
+            
+            return View(model);
         }
 
         public IActionResult Privacy()

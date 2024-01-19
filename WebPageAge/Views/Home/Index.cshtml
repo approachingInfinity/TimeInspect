@@ -1,8 +1,24 @@
-﻿@{
+﻿@model WebPageAge.Models.WebpageInfo
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<form  method="post">
+
+    <label for="basic-url">Your vanity URL</label>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+        </div>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+    </div>
+
+  
+    <button type="submit">Get</button>
+</form>
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>@Model.datePublished</p>
+    <p>@Model.dateModified</p>
+    <p>@Model.url</p>
 </div>
