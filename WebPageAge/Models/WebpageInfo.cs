@@ -5,6 +5,6 @@ namespace WebPageAge.Models
     {
         public string? datePublished { get; set; }
         public string? dateModified { get; set; }
-        public string? url { get; set; }
+        public  string? url { get; set; }
     }
 }

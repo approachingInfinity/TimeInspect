@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "w1jptwJ1wUHnFguX7VpE8wSWje7DxfJb+jBNm8wN7TGb/LnFmx31Sr0nIPdfJOYbqP29d0u47PuD/05j20RRmg==",
+  "dgSpecHash": "cFx6V2XfSDoAoevMbdDzFbacRbaOiTMeTh9ZetcPtExcxDkSTsDbgXz9imM9+rjYEyQvXTC0IMN3yUzcMdYgVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\source\\repos\\WebPageAge\\WebPageAge\\WebPageAge.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\htmlagilitypack\\1.11.57\\htmlagilitypack.1.11.57.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
