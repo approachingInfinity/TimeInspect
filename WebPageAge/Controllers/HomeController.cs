@@ -13,9 +13,11 @@ namespace WebPageAge.Controllers
         private readonly ILogger<HomeController> _logger;
           string? datePublished = null;
           string? dateModified = null;
+        AgeCalculator calc;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            calc = new AgeCalculator();
         }
 
         public async  Task<IActionResult> Index(WebpageInfo model)
@@ -94,10 +96,26 @@ namespace WebPageAge.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine("error occurred may be provided url is not incorrect or access denied");
+               model.hasError=true;
             }
-            if(datePublished!=null)model.datePublished= datePublished;
-            if(dateModified!=null)model.dateModified= dateModified;   
+            if (datePublished != null) { 
+            model.datePublished= datePublished;
+               DateTime dp=DateTime.Parse(datePublished);
+                calc.age(dp);
+                model.pubYears = calc.getYears();
+                model.pubMonths = calc.getMonths();
+                model.pubDays = calc.getDays();
+            }
+
+            if (dateModified != null) { 
+            model.dateModified= dateModified;
+            DateTime dm=DateTime.Parse(dateModified);
+                calc.age(dm);
+                model.modYears = calc.getYears();
+                model.modMonths = calc.getMonths();
+                model.modDays = calc.getDays();
+            }
+               
             return View(model);
         }
 

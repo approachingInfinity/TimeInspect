@@ -19,7 +19,21 @@
 
 <div class="text-center">
     
+    @if((Model.datePublished==null && Model.datePublished == null) || Model.hasError)
+    {
+        <p>either you have entered incorrect url or this webpage is inaccessible</p>
+    }
+    else
+    {
+        @if (Model.dateModified != null)
+        {
+            <p>date published=> @Model.datePublished (@Model.pubYears year @Model.pubMonths month @Model.pubDays days ago)</p>
+        }
+        @if (Model.datePublished != null)
+        {
+            <p>date modified=> @Model.dateModified (@Model.modYears year @Model.modMonths months @Model.modDays days ago)</p>
+        }
+    }
+
     
-    @if (Model.dateModified != null) { <p>date published=> @Model.datePublished</p>}
-    @if (Model.datePublished!=null) { <p>date modified=> @Model.dateModified</p>}
 </div>
